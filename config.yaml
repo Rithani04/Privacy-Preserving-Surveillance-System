@@ -1,0 +1,31 @@
+project:
+  base_raw_path: "Add your input_path"
+  donor : "Add your donor_path"
+  output_path: "Add your output_path"
+
+face_detection:
+  source: "huggingface"
+  repo_id: "arnabdhar/YOLOv8-Face-Detection"
+  filename: "model.pt"
+  conf_threshold: 0.25
+  iou_threshold: 0.5
+  max_det: 10
+  device: "cpu"
+  min_box_area: 150    
+
+tracking:
+  tracker_type: "bytetrack"
+  track_thresh: 0.5
+  match_thresh: 0.8
+  track_buffer: 30
+  frame_rate: 30
+  
+face_embedding:
+  model_name: "vggface2"        
+  image_size: 160              
+  similarity_threshold: 0.6     
+  min_face_size: 40            
+  device: "cpu"
+
+target:
+  image_path : "Add your target_path"
